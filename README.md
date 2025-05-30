@@ -6,7 +6,7 @@
 - You may enter your boolean function in the variable "Bfunc" in the second cell and run the notebook.
 - Uncomment the last cell to visualize the quantum circuit generated for the given boolean function.
 - The second last cell shall provide you with the comparision of classical and quantum solutions to the problem and the complexity of the quantum circuit genrated.
-- For the cases where no solution exists, the algorithm will return the complexity as "none" indicating the failure to converge to a solution.
+- For the cases where no solution exists, the algorithm will return the complexity as "None" indicating the failure to converge to a solution.
 
 ## Overview
 The Boolean Satisfiability Problem (SAT) is a foundational decision problem in computational complexity and mathematical logic. Given a Boolean formula composed of variables and logical operators, SAT asks whether there exists an assignment of truth values (TRUE/FALSE) to the variables that makes the entire formula evaluate to TRUE. This problem serves as a cornerstone for understanding NP-completeness and has profound implications across computer science and quantum computing.
@@ -15,7 +15,7 @@ Our approach is based on the fact that a single quantum operator is capable of r
 It is inspired by the dataset encoding method proposed by us in our work on structured quantum search. For more details, see [Prabhat et al., 2025](https://arxiv.org/abs/2504.03426).
 
 Classically, to remove any arbitrary $N$ entries that would not satisfy a clause would require $N$ queries, hence the quantum advantage.
-The operator in question is based on the non unitary AND operation using an ancilla qubit. It is defined as $\mathrm{\hat {A}}$, ${\mathrm{\hat {A}}} = \mathrm{CX}_{j,a}\cdot\mathrm{CX}_{a,j}$, where $j$ is the qubit corresponding to the variable in the clause, and $a$ is the ancilla qubit.
+The operator in question is based on the non unitary AND operation using an ancilla qubit. It is defined as $\mathrm{\hat {A}}$, ${\mathrm{\hat {A}}} =$ $\mathrm{CX}_{ja} \cdot \mathrm{CX}_{aj}$, where $j$ is the qubit corresponding to the variable in the clause, and $a$ is the ancilla qubit.
 
 <img src="images/operatorA.png" alt="Quantum AND gate circuit" width="500"/>
 
@@ -50,5 +50,5 @@ The circuit applies the operator ${\mathrm{\hat C}}$ for each clause, effectivel
 
 
 ## Known Issues
-- The algorithm currently does not handle single literal clauses robustly. Fpr example boolean function contating $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$ may not let the algorithm to converge. In such cases, it may produce extra non-solution states along with a complexity value as "none".
+- The algorithm currently does not handle single literal clauses robustly. Fpr example boolean function contating $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$ may not let the algorithm to converge. In such cases, it may produce extra non-solution states along with a complexity value as "None".
 - Use of machine learning and reinforcement learning to optimize the circuit generation is not yet implemented; we expect it to improve the circuit depth and performance.
