@@ -15,11 +15,9 @@ Our approach is based on the fact that a single quantum operator is capable of r
 It is inspired by the dataset encoding method proposed by us in our work on structured quantum search. For more details, see [Prabhat et al., 2025](https://arxiv.org/abs/2504.03426).
 
 Classically, to remove any arbitrary $N$ entries that would not satisfy a clause would require $N$ queries, hence the quantum advantage.
-The operator in question is based on the non unitary AND operation using an ancilla qubit. It is defined as:
-$${\mathrm{\hat A}} = \mathrm{CX}_{j,a}\cdot\mathrm{CX}_{a,j}$$
-where $j$ is the qubit corresponding to the variable in the clause, and $a$ is the ancilla qubit.
+The operator in question is based on the non unitary AND operation using an ancilla qubit. It is defined as $\mathrm{\hat {A}}$, ${\mathrm{\hat {A}}} = \mathrm{CX}_{j,a}\cdot\mathrm{CX}_{a,j}$, where $j$ is the qubit corresponding to the variable in the clause, and $a$ is the ancilla qubit.
 
-<img src="images/operatorA.png" alt="Quantum Operator A Circuit" width="350"/>
+<img src="images/operatorA.png" alt="Quantum AND gate circuit" width="500"/>
 
 The operator ${\mathrm{\hat A}}$ acts on a superposition of all states, removing those that do not satisfy the clause by flipping the ancilla qubit to a specific state in a single operation.
 This operator can be applied to each clause in the SAT problem, effectively filtering out all states that do not satisfy any of the clauses. The final state of the system will be a superposition of all satisfying assignments, which can then be measured to find a solution.
