@@ -46,7 +46,7 @@ Here, we count each $\mathrm{\hat{C}}_i$ and respective CX operation as a single
 The following example illustrates the application of the quantum operator to a specific k-SAT problem with 5 variables and 4 clauses. The clauses are represented as follows:
 $$(\bar x_4 \lor x_1)\land ( x_5 \lor \bar x_2)\land(x_3 x_2 \lor \bar x_1)\land(\bar x_4 \lor\bar x_2\lor\bar x_1)\land(x_5\lor x_4 \lor \bar x_3) $$
 
-<img src="images/example_qc.png" alt="Quantum k-SAT Operator Circuit" width="1000"/>
+<img src="images/Example_qc.png" alt="Quantum k-SAT Operator Circuit" width="1000"/>
 
 The circuit applies the operator ${\mathrm{\hat C}}$ for each clause, effectively filtering out all states that do not satisfy any of the clauses. The final state of the system will be a superposition of all satisfying assignments, which can then be measured to find a solution.
 
