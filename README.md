@@ -52,5 +52,5 @@ The circuit applies the operator ${\mathrm{\hat C}}$ for each clause, effectivel
 
 
 ## Known Issues
-- The algorithm currently does not handle single literal clauses robustly, e.g., $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$. In such cases, it may produce extra non-solution states along with a complexity value as "none".
+- The algorithm currently does not handle single literal clauses robustly. Fpr example boolean function contating $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$ may not let the algorithm to converge. In such cases, it may produce extra non-solution states along with a complexity value as "none".
 - Use of machine learning and reinforcement learning to optimize the circuit generation is not yet implemented; we expect it to improve the circuit depth and performance.
