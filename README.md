@@ -16,14 +16,10 @@ It is inspired by the dataset encoding method proposed by us in our work on stru
 
 Classically, to remove any arbitrary $N$ entries that would not satisfy a clause would require $N$ queries, hence the quantum advantage.
 The operator in question is based on the non unitary AND operation using an ancilla qubit. It is defined as:
-$$
-{\mathrm{\hat A}} = \mathrm{CX}_{j,a}\cdot\mathrm{CX}_{a,j},\quad
-\mathrm{CX}_{j,a} = \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{bmatrix},\ 
-\mathrm{CX}_{a,j} = \begin{bmatrix}1&0&0&0\\0&0&0&1\\0&0&1&0\\0&1&0&0\end{bmatrix}
-$$
+$${\mathrm{\hat A}} = \mathrm{CX}_{j,a}\cdot\mathrm{CX}_{a,j}$$
 where $j$ is the qubit corresponding to the variable in the clause, and $a$ is the ancilla qubit.
 
-<img src="images/operatorA.png" alt="Quantum k-SAT Operator Circuit" width="350"/>
+<img src="images/operatorA.png" alt="Quantum Operator A Circuit" width="350"/>
 
 The operator ${\mathrm{\hat A}}$ acts on a superposition of all states, removing those that do not satisfy the clause by flipping the ancilla qubit to a specific state in a single operation.
 This operator can be applied to each clause in the SAT problem, effectively filtering out all states that do not satisfy any of the clauses. The final state of the system will be a superposition of all satisfying assignments, which can then be measured to find a solution.
@@ -49,10 +45,12 @@ Here, we count each $\mathrm{\hat{C}}_i$ and respective CX operation as a single
 ## Quantum circuit example 
 The following example illustrates the application of the quantum operator to a specific k-SAT problem with 5 variables and 4 clauses. The clauses are represented as follows:
 $$(\bar x_4 \lor x_1)\land ( x_5 \lor \bar x_2)\land(x_3 x_2 \lor \bar x_1)\land(\bar x_4 \lor\bar x_2\lor\bar x_1)\land(x_5\lor x_4 \lor \bar x_3) $$
-![Quantum k-SAT Operator Circuit](images/example_qc.png)
+
+<img src="images/example_qc.png" alt="Quantum k-SAT Operator Circuit" width="1000"/>
+
 The circuit applies the operator ${\mathrm{\hat C}}$ for each clause, effectively filtering out all states that do not satisfy any of the clauses. The final state of the system will be a superposition of all satisfying assignments, which can then be measured to find a solution.
 
 
 ## Known Issues
-- The algorithm currently does not handle single literal clauses (e.g., $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$) robustly. In such cases, it may produce extra non-solution states along with a complexity value as "none".
+- The algorithm currently does not handle single literal clauses robustly, e.g., $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$. In such cases, it may produce extra non-solution states along with a complexity value as "none".
 - Use of machine learning and reinforcement learning to optimize the circuit generation is not yet implemented; we expect it to improve the circuit depth and performance.
