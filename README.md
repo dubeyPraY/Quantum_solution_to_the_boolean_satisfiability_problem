@@ -15,7 +15,7 @@ Our approach is based on the fact that a single quantum operator is capable of r
 It is inspired by the dataset encoding method proposed by us in our work on structured quantum search. For more details, see [Prabhat et al., 2025](https://arxiv.org/abs/2504.03426).
 
 Classically, to remove any arbitrary $N$ entries that would not satisfy a clause would require $N$ queries, hence the quantum advantage.
-The operator in question is based on the non unitary AND operation using an ancilla qubit. It is defined as $\mathrm{\hat {A}}$, ${\mathrm{\hat {A}}} =$ $\mathrm{CX}_{ja} \cdot \mathrm{CX}_{aj}$, where $j$ is the qubit corresponding to the variable in the clause, and $a$ is the ancilla qubit.
+The operator in question is based on the non unitary AND operation using an ancilla qubit. It is defined as $\mathrm{\hat {A}}$, ${\mathrm{\hat {A}}} =$ $\mathrm{C} \mathrm{X}_{ja} \cdot \mathrm{C} \mathrm{X}_{aj}$, where $j$ is the qubit corresponding to the variable in the clause, and $a$ is the ancilla qubit.
 
 <img src="images/operatorA.png" alt="Quantum AND gate circuit" width="500"/>
 
@@ -35,8 +35,8 @@ We propose an additional conjecture that says if there exists a solution state f
 Thus we also suggest that an infinite loop of intersecting clauses would mean no satisfiable assignment to the said boolean problem exists.
 
 ## Complexity
-The worst case classical complexity of creating such a quantum circuit is of $\mathcal{O}(m^2\cdot n^2)$.
-The worst-case circuit depth of the quantum circuit generated comes out to be $\mathcal{O}(m/2(m+1))=\mathcal{O}(m^2)$. 
+The worst case classical complexity of creating such a quantum circuit is of $\mathcal{O}(m^2\cdot n^3)$.
+The worst-case circuit depth of the quantum circuit generated comes out to be $\mathcal{O}(m^2)$. 
 Here, we count each $\mathrm{\hat{C}}_i$ and respective CX operation as a single unit of circuit depth.
 
 
@@ -47,8 +47,15 @@ $$(\bar x_4 \lor x_1)\land ( x_5 \lor \bar x_2)\land(x_3 x_2 \lor \bar x_1)\land
 <img src="images/Example_qc.png" alt="Quantum k-SAT Operator Circuit" width="1000"/>
 
 The circuit applies the operator ${\mathrm{\hat C}}$ for each clause, effectively filtering out all states that do not satisfy any of the clauses. The final state of the system will be a superposition of all satisfying assignments, which can then be measured to find a solution.
-
+Each clause is applied to a separate target qubit, ensuring that the operations do not interfere with each other. Here the circuit depth is 5, corresponding to the number of clauses.
 
 ## Known Issues
-- The algorithm currently does not handle single literal clauses robustly. Fpr example boolean function contating $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$ may not let the algorithm to converge. In such cases, it may produce extra non-solution states along with a complexity value as "None".
+- The algorithm currently requires the clauses to be in CNF (Conjunctive Normal Form) and requires sorting of the clauses based on the number of literals in each clause.
+- The algorithm currently does not handle single literal clauses robustly. For example boolean function contating $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$ may not let the algorithm to converge. In such cases, it may produce extra non-solution states along with a complexity value as "None".
 - Use of machine learning and reinforcement learning to optimize the circuit generation is not yet implemented; we expect it to improve the circuit depth and performance.
+- We are still working to resolve certain edge cases where the algorithm may not converge to a solution, particularly in cases with complex overlapping clauses. These can be addressed by reordering of clauses, we hope for a more robust solution in the future. 
+- Note that the work is still in progress, and we are actively working on improving the algorithm and its implementation. We welcome contributions and suggestions to enhance the solution.
+
+## References
+- Y. Prabhat, S. Thakur, and A. Raina, Structured quantum search algorithm: A quantum leap, arXiv preprint
+2504.03426 (2025).
