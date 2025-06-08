@@ -2,7 +2,8 @@
 ### We present a simple quantum solution to the k-SAT/Boolean satisfiability problems
 
 ## Usage
-- To very the algorithm, you can run the sat_sol_complete.ipynb file.
+- The theory of the proposed of the quantum solution for solving the k-SAT problem is provided in the pdf file `Boolean_satisfibility.pdf`.
+- To verify the algorithm, you can run the sat_sol_complete.ipynb file.
 - You may enter your boolean function in the variable "Bfunc" in the second cell and run the notebook.
 - Uncomment the last cell to visualize the quantum circuit generated for the given boolean function.
 - The second last cell shall provide you with the comparision of classical and quantum solutions to the problem and the complexity of the quantum circuit genrated.
