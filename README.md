@@ -2,7 +2,7 @@
 ### We present a simple quantum solution to the k-SAT/Boolean satisfiability problems
 
 ## Usage
-- The theory of the proposed of the quantum solution for solving the k-SAT problem is provided in the pdf file `Boolean_satisfibility.pdf`.
+- The theory of the proposed of the quantum solution for solving the k-SAT problem is provided in the pdf file `Boolean_satisfibility.pdf`. Please cite the DOI http://dx.doi.org/10.13140/RG.2.2.10572.94080 for the work.
 - To verify the algorithm, you can run the sat_sol_complete.ipynb file.
 - You may enter your boolean function in the variable "Bfunc" in the second cell and run the notebook.
 - Uncomment the last cell to visualize the quantum circuit generated for the given boolean function.
@@ -52,11 +52,12 @@ Each clause is applied to a separate target qubit, ensuring that the operations 
 
 ## Known Issues
 - The algorithm currently requires the clauses to be in CNF (Conjunctive Normal Form) and requires sorting of the clauses based on the number of literals in each clause.
-- The algorithm currently does not handle single literal clauses robustly. For example boolean function contating $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$ may not let the algorithm to converge. In such cases, it may produce extra non-solution states along with a complexity value as "None".
+- The algorithm currently does not handle single literal clauses robustly. For example boolean function containing $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$ may not let the algorithm to converge. In such cases, it may produce extra non-solution states along with a complexity value as "None".
 - Use of machine learning and reinforcement learning to optimize the circuit generation is not yet implemented; we expect it to improve the circuit depth and performance.
 - We are still working to resolve certain edge cases where the algorithm may not converge to a solution, particularly in cases with complex overlapping clauses. These can be addressed by reordering of clauses, we hope for a more robust solution in the future. 
 - Note that the work is still in progress, and we are actively working on improving the algorithm and its implementation. We welcome contributions and suggestions to enhance the solution.
 
 ## References
+- Y. Prabhat, Quantum solution to the boolean satisfiability problem, preprint DOI http://dx.doi.org/10.13140/RG.2.2.10572.94080.
 - Y. Prabhat, S. Thakur, and A. Raina, Structured quantum search algorithm: A quantum leap, arXiv preprint
 2504.03426 (2025).
