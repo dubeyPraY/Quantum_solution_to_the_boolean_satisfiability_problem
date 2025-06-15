@@ -58,6 +58,6 @@ Each clause is applied to a separate target qubit, ensuring that the operations 
 - Note that the work is still in progress, and we are actively working on improving the algorithm and its implementation. We welcome contributions and suggestions to enhance the solution.
 
 ## References
-- Y. Prabhat, Quantum solution to the boolean satisfiability problem, preprint DOI http://dx.doi.org/10.13140/RG.2.2.10572.94080.
+- Y. Prabhat, Quantum solution to the boolean satisfiability problem, preprint DOI http://dx.doi.org/10.13140/RG.2.2.27641.79208.
 - Y. Prabhat, S. Thakur, and A. Raina, Structured quantum search algorithm: A quantum leap, arXiv preprint
 2504.03426 (2025).
