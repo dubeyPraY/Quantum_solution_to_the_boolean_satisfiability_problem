@@ -1,4 +1,4 @@
-# k-SAT-problem-solution
+# SAT-problem-solution
 ### We present a simple quantum solution to the k-SAT/Boolean satisfiability problems
 
 ## Usage
