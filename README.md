@@ -1,5 +1,5 @@
 # SAT-problem-solution
-### We present a simple quantum solution to the k-SAT/Boolean satisfiability problems
+### We present a simple quantum solution to the SAT/Boolean satisfiability problems
 
 ## Usage
 - The theory of the proposed of the quantum solution for solving the k-SAT problem is provided in the pdf file `Boolean_satisfibility.pdf`. Please cite the DOI http://dx.doi.org/10.13140/RG.2.2.27641.79208/1 for the work.
