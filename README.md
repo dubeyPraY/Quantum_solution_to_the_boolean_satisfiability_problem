@@ -2,7 +2,7 @@
 ### We present a simple quantum solution to the SAT/Boolean satisfiability problems
 
 ## Usage
-- The theory of the proposed of the quantum solution for solving the k-SAT problem is provided in the pdf file `Boolean_satisfibility.pdf`. Please cite the DOI http://dx.doi.org/10.13140/RG.2.2.27641.79208/1 for the work.
+- The theory of the proposed of the quantum solution for solving the SAT problem is provided in the pdf file `Boolean_satisfibility.pdf`. Please cite the DOI http://dx.doi.org/10.13140/RG.2.2.27641.79208/1 for the work.
 - To verify the algorithm, you can run the sat_sol_complete.ipynb file.
 - You may enter your boolean function in the variable "Bfunc" in the second cell and run the notebook.
 - Uncomment the last cell to visualize the quantum circuit generated for the given boolean function.
@@ -42,10 +42,10 @@ Here, we count each $\mathrm{\hat{C}}_i$ and respective CX operation as a single
 
 
 ## Quantum circuit example 
-The following example illustrates the application of the quantum operator to a specific k-SAT problem with 5 variables and 4 clauses. The clauses are represented as follows:
+The following example illustrates the application of the quantum operator to a specific SAT problem with 5 variables and 4 clauses. The clauses are represented as follows:
 $$(\bar x_4 \lor x_1)\land ( x_5 \lor \bar x_2)\land(x_3 x_2 \lor \bar x_1)\land(\bar x_4 \lor\bar x_2\lor\bar x_1)\land(x_5\lor x_4 \lor \bar x_3) $$
 
-<img src="images/Example_qc.png" alt="Quantum k-SAT Operator Circuit" width="1000"/>
+<img src="images/Example_qc.png" alt="Quantum SAT Operator Circuit" width="1000"/>
 
 The circuit applies the operator ${\mathrm{\hat C}}$ for each clause, effectively filtering out all states that do not satisfy any of the clauses. The final state of the system will be a superposition of all satisfying assignments, which can then be measured to find a solution.
 Each clause is applied to a separate target qubit, ensuring that the operations do not interfere with each other. Here the circuit depth is 5, corresponding to the number of clauses.
