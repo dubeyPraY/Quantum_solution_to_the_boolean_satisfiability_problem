@@ -54,7 +54,7 @@ Each clause is applied to a separate target qubit, ensuring that the operations 
 - The algorithm currently requires the clauses to be in CNF (Conjunctive Normal Form) and requires sorting of the clauses based on the number of literals in each clause.
 - The algorithm currently does not handle single literal clauses robustly. For example boolean function containing $x_1$ or $(x_1 \lor x_2) \land (x_1 \lor \bar x_2)$ may not let the algorithm to converge. In such cases, it may produce extra non-solution states along with a complexity value as "None".
 - Use of machine learning and reinforcement learning to optimize the circuit generation is not yet implemented; we expect it to improve the circuit depth and performance.
-- We are still working to resolve certain edge cases where the algorithm may not converge to a solution, particularly in cases with complex overlapping clauses. These can be addressed by reordering of clauses, we hope for a more robust solution in the future. Current fix is to reverse the sorting order of clauses based on the value of literals in each clause, which may help in some cases.
+- We are still working to resolve certain edge cases where the algorithm may not converge to a solution, particularly in cases with complex overlapping clauses. These can be addressed by reordering of clauses, we hope for a more robust solution in the future. Current fix is to reverse the sorting order of clauses based on the value or absolute of literals in each clause, which solves most of the cases.
 - Note that the work is still in progress, and we are actively working on improving the algorithm and its implementation. We welcome contributions and suggestions to enhance the solution.
 
 ## References
