@@ -2,7 +2,7 @@
 ### We present a simple quantum solution to the k-SAT/Boolean satisfiability problems
 
 ## Usage
-- The theory of the proposed of the quantum solution for solving the k-SAT problem is provided in the pdf file `Boolean_satisfibility.pdf`. Please cite the DOI http://dx.doi.org/10.13140/RG.2.2.27641.79208 for the work.
+- The theory of the proposed of the quantum solution for solving the k-SAT problem is provided in the pdf file `Boolean_satisfibility.pdf`. Please cite the DOI http://dx.doi.org/10.13140/RG.2.2.27641.79208/1 for the work.
 - To verify the algorithm, you can run the sat_sol_complete.ipynb file.
 - You may enter your boolean function in the variable "Bfunc" in the second cell and run the notebook.
 - Uncomment the last cell to visualize the quantum circuit generated for the given boolean function.
@@ -58,6 +58,6 @@ Each clause is applied to a separate target qubit, ensuring that the operations 
 - Note that the work is still in progress, and we are actively working on improving the algorithm and its implementation. We welcome contributions and suggestions to enhance the solution.
 
 ## References
-- Y. Prabhat, Quantum solution to the boolean satisfiability problem, preprint DOI http://dx.doi.org/10.13140/RG.2.2.27641.79208.
+- Y. Prabhat, Quantum solution to the boolean satisfiability problem, preprint DOI http://dx.doi.org/10.13140/RG.2.2.27641.79208/1.
 - Y. Prabhat, S. Thakur, and A. Raina, Structured quantum search algorithm: A quantum leap, arXiv preprint
 2504.03426 (2025).
